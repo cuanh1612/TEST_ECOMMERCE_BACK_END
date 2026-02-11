@@ -41,4 +41,13 @@ export class CreateProductDto {
   })
   @IsString()
   description: string;
+
+  @ApiProperty({
+    example: 'content detail',
+    description: 'content detail',
+    nullable: false,
+    type: 'string'
+  })
+  @IsString()
+  detail: string;
 }

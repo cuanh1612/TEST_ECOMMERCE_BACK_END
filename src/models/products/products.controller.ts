@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { CreateProductDto } from './dtos/create-product.dto';
 import { ProductsService } from './products.service';
 
@@ -23,5 +23,12 @@ export class ProductsController {
         @Param('id', ParseIntPipe) id: number,
     ) {
         return await this.productService.findOne(id);
+    }
+
+    @Delete(':id')
+    async delete(
+        @Param('id', ParseIntPipe) id: number,
+    ) {
+        return await this.productService.delete(id);
     }
 }

@@ -20,4 +20,7 @@ export class Product {
 
     @Column({ nullable: true })
     description: string;
+
+    @Column({ nullable: true })
+    detail: string;
 }

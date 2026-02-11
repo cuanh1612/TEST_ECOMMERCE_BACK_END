@@ -34,4 +34,18 @@ export class ProductsService {
 
         return foundProduct
     }
+
+    async delete(id: number) {
+        const foundProduct = await this.productRepository.findOne({
+            where: {
+                id
+            }
+        })
+
+        if (foundProduct) {
+            await this.productRepository.remove(foundProduct)
+        }
+
+        return { message: 'Delete product success' };
+    }
 }
