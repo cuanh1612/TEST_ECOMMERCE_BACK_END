@@ -29,12 +29,23 @@ export class CartsController {
         return this.cartService.removeProduct(req.user.id, productId);
     }
 
-    
+    @ApiBearerAuth('access-token')
     @UseGuards(AuthenticationGuard)
     @Get('/items')
     getCartItems(
         @Request() req,
     ) {
         return this.cartService.getCartItems(req.user.id);
+    }
+
+    @ApiBearerAuth('access-token')
+    @UseGuards(AuthenticationGuard)
+    @Get('/checkCart')
+    checkCart(
+        @Request() req,
+    ) {
+        console.log(req.user);
+        
+        return this.cartService.checkCart(req.user.id);
     }
 }

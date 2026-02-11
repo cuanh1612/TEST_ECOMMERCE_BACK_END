@@ -104,4 +104,18 @@ export class CartsService {
         return items;
     }
 
+    async checkCart(userId: number) {
+        const foundCartItem = await this.cartItemRepository.findOne({
+            where: {
+                cart: {
+                    user: { id: userId },
+                },
+            },
+        });
+
+        return {
+            checkCart: !!foundCartItem
+        };
+    }
+
 }
