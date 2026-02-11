@@ -36,7 +36,6 @@ export class AuthService {
 
     async login(user: User) {
         const payload: AuthPayload = {
-            name: user.name,
             email: user.email,
             id: user.id,
         };

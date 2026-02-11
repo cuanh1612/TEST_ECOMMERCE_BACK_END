@@ -29,7 +29,7 @@ export class CartsController {
         return this.cartService.removeProduct(req.user.id, productId);
     }
 
-    @ApiBearerAuth('access-token')
+    
     @UseGuards(AuthenticationGuard)
     @Get('/items')
     getCartItems(
