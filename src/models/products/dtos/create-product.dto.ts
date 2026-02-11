@@ -16,7 +16,7 @@ export class CreateProductDto {
   name: string;
 
   @ApiProperty({
-    example: '10000',
+    example: 10000,
     description: 'price product',
     nullable: false,
     type: 'number'

@@ -15,12 +15,12 @@ export class Product {
     @Column('decimal', { precision: 10, scale: 2 })
     price: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true, type: 'text' })
     image: string;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true, type: 'text' })
     description: string;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true, type: 'longtext' })
     detail: string;
 }
